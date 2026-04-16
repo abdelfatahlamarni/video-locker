@@ -32,7 +32,7 @@ video {
     border-radius: 10px;
 }
 
-/* Overlay (lock screen) */
+/* Overlay lock */
 .overlay {
     position: absolute;
     top: 0;
@@ -44,6 +44,7 @@ video {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 
 .overlay h2 {
@@ -82,9 +83,9 @@ button {
 
 <div class="video-box">
 
-<!-- 🔥 VIDEO FROM LINK -->
+<!-- VIDEO -->
 <video id="myVideo" controls>
-  <source src="https://drive.google.com/file/d/1CCb7INUCI46PWIZ0NlOQdnnthrE69O2J/view" type="video/mp4">
+  <source src="https://drive.google.com/uc?export=download&id=1CCb7INUCI46PWIZ0NlOQdnnthrE69O2J" type="video/mp4">
 </video>
 
 <!-- LOCK OVERLAY -->
@@ -96,10 +97,10 @@ button {
 
 </div>
 
-<!-- OGADS LOCKER HERE -->
+<!-- OGADS LOCKER -->
 <div id="locker">
 
-<!-- 🔥 PASTE OGADS CONTENT LOCKER CODE HERE -->
+<!-- PASTE OGADS CODE HERE -->
 
 </div>
 
@@ -107,28 +108,23 @@ button {
 
 <script>
 
-// stop full play until unlock
 let video = document.getElementById("myVideo");
 
+// منع التشغيل قبل unlock
 video.addEventListener("play", function() {
     video.pause();
 });
 
-// show OGAds locker
+// فتح locker
 function showLocker() {
     document.getElementById("locker").style.display = "block";
 }
 
-/*
-🔥 OPTIONAL:
-If your OGAds locker gives callback support,
-you can call this function after completion:
-
+// (اختياري) فتح الفيديو بعد الإكمال
 function unlockVideo() {
     document.getElementById("overlay").style.display = "none";
     video.play();
 }
-*/
 
 </script>
 
