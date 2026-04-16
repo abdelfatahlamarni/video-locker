@@ -1,134 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-<meta charset="UTF-8">
-<title>Watch Video</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>فيديو حصري</title>
 
-<style>
-body {
-    margin: 0;
-    background: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #000;
+      color: white;
+      text-align: center;
+    }
 
-.container {
-    padding: 20px;
-}
+    .container {
+      max-width: 700px;
+      margin: 60px auto;
+    }
 
-h1 {
-    font-size: 22px;
-}
+    iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+      border: none;
+    }
 
-.video-box {
-    position: relative;
-    margin-top: 20px;
-}
-
-video {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* Overlay lock */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-}
-
-.overlay h2 {
-    margin-bottom: 10px;
-}
-
-.overlay p {
-    color: #ccc;
-    font-size: 14px;
-}
-
-button {
-    margin-top: 15px;
-    padding: 12px 25px;
-    background: #ff0000;
-    color: #fff;
-    border: none;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-#locker {
-    display: none;
-    margin-top: 20px;
-}
-</style>
+    p {
+      color: #aaa;
+    }
+  </style>
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>🔒 Watch Full Video</h1>
-<p>Complete one quick step to unlock</p>
+  <h2>🔥 شاهد الفيديو الآن</h2>
 
-<div class="video-box">
+  <!-- VIDEO -->
+  <iframe 
+    src="https://drive.google.com/file/d/1CCb7INUCI46PWIZ0NlOQdnnthrE69O2J/preview"
+    allow="autoplay">
+  </iframe>
 
-<!-- VIDEO -->
-<video id="myVideo" controls>
-  <source src="https://drive.google.com/uc?export=download&id=1CCb7INUCI46PWIZ0NlOQdnnthrE69O2J" type="video/mp4">
-</video>
-
-<!-- LOCK OVERLAY -->
-<div class="overlay" id="overlay">
-    <h2>Video Locked 🔒</h2>
-    <p>Complete the offer to continue watching</p>
-    <button onclick="showLocker()">Unlock Now</button>
-</div>
+  <p>أكمل خطوة بسيطة لفتح المحتوى</p>
 
 </div>
 
-<!-- OGADS LOCKER -->
-<div id="https://checkmyapp.store/cl/i/j7n7vn
-">
-
-<!-- https://checkmyapp.store/cl/i/j7n7vn
- -->
-
-</div>
-
-</div>
-
-<script>
-
-let video = document.getElementById("myVideo");
-
-// منع التشغيل قبل unlock
-video.addEventListener("play", function() {
-    video.pause();
-});
-
-// فتح locker
-function showLocker() {
-    document.getElementById("locker").style.display = "block";
-}
-
-// (اختياري) فتح الفيديو بعد الإكمال
-function unlockVideo() {
-    document.getElementById("overlay").style.display = "none";
-    video.play();
-}
-
+<!-- OGAds Locker -->
+<script type="text/javascript">
+  var _ogads = _ogads || [];
+  _ogads.push(['lock', 'j7n7vn']);
 </script>
+
+<script src="https://ogads.com/assets/js/locker.js"></script>
 
 </body>
 </html>
