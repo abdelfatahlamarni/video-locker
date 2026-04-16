@@ -13,37 +13,77 @@
       text-align: center;
     }
 
-    .container {
+    .box {
       max-width: 700px;
       margin: 60px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    h1 {
+      color: #00ffcc;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      background: #00ffcc;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #00c9aa;
     }
 
     iframe {
       width: 100%;
-      height: 400px;
+      height: 360px;
       border-radius: 10px;
-      border: none;
+      margin-top: 15px;
     }
 
-    p {
+    #videoSection {
+      display: none;
+    }
+
+    .note {
       color: #aaa;
+      font-size: 14px;
+      margin-top: 10px;
     }
   </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="box">
 
-  <h2>🔥 شاهد الفيديو الآن</h2>
+  <!-- LANDING -->
+  <div id="landing" class="card">
+    <h1>🔥 فيديو صادم لا يفوتك</h1>
+    <p>شاهد أداء لن تتوقعه 😱</p>
+    <button onclick="showVideo()">▶ مشاهدة الفيديو</button>
+  </div>
 
   <!-- VIDEO -->
-  <iframe 
-    src="https://drive.google.com/file/d/1CCb7INUCI46PWIZ0NlOQdnnthrE69O2J/preview"
-    allow="autoplay">
-  </iframe>
+  <div id="videoSection" class="card">
+    <h2>🎬 الفيديو</h2>
 
-  <p>أكمل خطوة بسيطة لفتح المحتوى</p>
+    <iframe src="https://drive.google.com/file/d/1CCb7INUCI46PWIZ0NlOQdnnthrE69O2J/preview"></iframe>
+
+    <p class="note">⚠️ سيتم فتح الفيديو بعد خطوة بسيطة</p>
+  </div>
 
 </div>
 
@@ -54,6 +94,13 @@
 </script>
 
 <script src="https://ogads.com/assets/js/locker.js"></script>
+
+<script>
+  function showVideo() {
+    document.getElementById("landing").style.display = "none";
+    document.getElementById("videoSection").style.display = "block";
+  }
+</script>
 
 </body>
 </html>
