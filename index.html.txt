@@ -2,59 +2,73 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Unlock Video</title>
+<title>Watch Video</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body {
-    margin:0;
-    background:#000;
-    color:white;
-    font-family:Arial;
-    text-align:center;
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
 .container {
-    padding:20px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 22px;
 }
 
 .video-box {
-    position:relative;
-    margin-top:20px;
+    position: relative;
+    margin-top: 20px;
 }
 
 video {
-    width:100%;
+    width: 100%;
+    border-radius: 10px;
 }
 
-/* overlay */
+/* Overlay (lock screen) */
 .overlay {
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.85);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay h2 {
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    color: #ccc;
+    font-size: 14px;
 }
 
 button {
-    margin-top:15px;
-    padding:12px 25px;
-    background:#ff0000;
-    color:white;
-    border:none;
-    font-size:16px;
-    border-radius:8px;
-    cursor:pointer;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 #locker {
-    display:none;
-    margin-top:20px;
+    display: none;
+    margin-top: 20px;
 }
 </style>
 </head>
@@ -63,51 +77,59 @@ button {
 
 <div class="container">
 
-<h2>🔒 Unlock Full Video</h2>
-<p>Complete a quick step to watch the full video</p>
+<h1>🔒 Watch Full Video</h1>
+<p>Complete one quick step to unlock</p>
 
 <div class="video-box">
 
+<!-- 🔥 VIDEO FROM LINK -->
 <video id="myVideo" controls>
-  <source src="video.mp4" type="video/mp4">
+  <source src="https://drive.google.com/file/d/1CCb7INUCI46PWIZ0NlOQdnnthrE69O2J/view" type="video/mp4">
 </video>
 
+<!-- LOCK OVERLAY -->
 <div class="overlay" id="overlay">
-    <h3>Video Locked 🔒</h3>
+    <h2>Video Locked 🔒</h2>
     <p>Complete the offer to continue watching</p>
     <button onclick="showLocker()">Unlock Now</button>
 </div>
 
 </div>
 
+<!-- OGADS LOCKER HERE -->
 <div id="locker">
 
-<!-- https://checkmyapp.store/cl/i/j7n7vn
- -->
-<!-- Replace with your OGAds code -->
+<!-- 🔥 PASTE OGADS CONTENT LOCKER CODE HERE -->
 
 </div>
 
 </div>
 
 <script>
+
+// stop full play until unlock
 let video = document.getElementById("myVideo");
 
-// يمنع تشغيل الفيديو
 video.addEventListener("play", function() {
     video.pause();
 });
 
-// إظهار locker
+// show OGAds locker
 function showLocker() {
     document.getElementById("locker").style.display = "block";
 }
 
-// 🔓 دير هاد الفنكشن ملي يكمّل العرض (تربطها مع OGAds)
+/*
+🔥 OPTIONAL:
+If your OGAds locker gives callback support,
+you can call this function after completion:
+
 function unlockVideo() {
     document.getElementById("overlay").style.display = "none";
     video.play();
 }
+*/
+
 </script>
 
 </body>
